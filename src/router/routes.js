@@ -31,6 +31,10 @@ const routes = [
             name: "List",
             meta: {
               title: "人员列表",
+              keepAlive: true, // 进行缓存
+              // 从哪个路由跳转到此页面时，需要保持缓存的状态
+              // 如果不写或者为空数组，则无论从哪里进入，都会进行缓存
+              cacheFrom: ["Detail"],
             },
             component: () => import("@/views/personManage/list.vue"),
           },
