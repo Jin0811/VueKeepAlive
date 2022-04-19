@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2 style="margin: 0px 0px 20px">列表</h2>
-    <el-table :data="tableData" border style="width: 100%">
+    <el-table :data="tableData" border style="width: 100%" v-loading="loading">
       <el-table-column
         prop="id"
         label="ID"
@@ -57,6 +57,7 @@ export default {
         pageSize: 10,
         total: 0,
       },
+      loading: false,
     };
   },
   created() {
@@ -65,6 +66,7 @@ export default {
   methods: {
     // 查询表格数据（Mock数据）
     fetch() {
+      this.loading = true;
       let result = this.generateTableData(
         this.page.current,
         this.page.pageSize
@@ -78,6 +80,9 @@ export default {
         };
       });
       this.page.total = 50;
+      setTimeout(() => {
+        this.loading = false;
+      }, 1000);
     },
     // 生成表格数据
     generateTableData(current, pageSize) {
