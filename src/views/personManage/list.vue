@@ -101,9 +101,9 @@ export default {
 </script>
 
 <style lang="scss">
-  .pagination{
-    display: flex;
-    justify-content: flex-end;
-    margin-top: 20px;
-  }
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
 </style>
