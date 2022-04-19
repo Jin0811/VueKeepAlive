@@ -27,7 +27,7 @@ router.beforeEach((to, from, next) => {
     Store.commit("ADD_CACHEVIEW", from);
   }
 
-  setTimeout(() => next());
+  next();
 });
 
 export default router;
