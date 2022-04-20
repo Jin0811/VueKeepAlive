@@ -27,7 +27,10 @@ router.beforeEach((to, from, next) => {
     Store.commit("ADD_CACHEVIEW", from);
   }
 
-  next();
+  // 这里不进行延时的话，会有一定几率，数据还没存到vuex当中，页面已经跳转完成了，就会造成页面缓存功能出现Bug
+  setTimeout(() => {
+    next();
+  }, 100);
 });
 
 export default router;
