@@ -50,6 +50,26 @@ const routes = [
           },
         ],
       },
+      {
+        path: "/layout/singleMenu",
+        name: "SingleMenu",
+        meta: {
+          title: "一级菜单页面缓存",
+          keepAlive: true, // 进行缓存
+          cacheFrom: ["SingleMenuDetail"], // 只有从name为SingleMenuDetail的路由进来时，才会缓存此页面
+        },
+        component: () => import("@/views/singleMenu/list.vue"),
+      },
+      {
+        path: "/layout/singleMenuDetail",
+        name: "SingleMenuDetail",
+        meta: {
+          title: "一级菜单页面缓存 - 详情页",
+          hidden: true,
+          activeMenu: "/layout/singleMenu"
+        },
+        component: () => import("@/views/singleMenu/detail.vue"),
+      },
     ],
   },
   {
