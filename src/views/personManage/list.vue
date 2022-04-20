@@ -82,7 +82,7 @@ export default {
             address: `地址${item}`,
           };
         });
-      }, 1000);
+      }, 500);
     },
     // 生成表格数据
     generateTableData(current, pageSize) {
