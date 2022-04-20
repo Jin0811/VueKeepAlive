@@ -8,7 +8,10 @@
         <Menu></Menu>
       </el-aside>
       <el-main>
-        <router-view></router-view>
+        <!-- 这里针对的是一级菜单需要进行缓存的情况 -->
+        <keep-alive :include="cacheViews">
+          <router-view></router-view>
+        </keep-alive>
       </el-main>
     </el-container>
   </el-container>
@@ -20,6 +23,11 @@ export default {
   name: "Layout",
   components: {
     Menu,
+  },
+  computed: {
+    cacheViews() {
+      return this.$store.state.cacheViews;
+    },
   },
 };
 </script>

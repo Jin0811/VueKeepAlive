@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: "Detail",
+  name: "SingleMenuDetail",
   data() {
     return {
       record: this.$route.query,

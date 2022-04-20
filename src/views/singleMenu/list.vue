@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  name: "List",
+  name: "SingleMenu",
   data() {
     return {
       tableData: [],
