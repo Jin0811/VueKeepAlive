@@ -66,7 +66,7 @@ const routes = [
         meta: {
           title: "一级菜单页面缓存 - 详情页",
           hidden: true,
-          activeMenu: "/layout/singleMenu"
+          activeMenu: "/layout/singleMenu",
         },
         component: () => import("@/views/singleMenu/detail.vue"),
       },
