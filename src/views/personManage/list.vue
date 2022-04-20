@@ -71,17 +71,17 @@ export default {
         this.page.current,
         this.page.pageSize
       );
-      this.tableData = result.map((item) => {
-        return {
-          id: item,
-          name: `姓名${item}`,
-          phone: `${item}`.repeat(5),
-          address: `地址${item}`,
-        };
-      });
       this.page.total = 50;
       setTimeout(() => {
         this.loading = false;
+        this.tableData = result.map((item) => {
+          return {
+            id: item,
+            name: `姓名${item}`,
+            phone: `${item}`.repeat(5),
+            address: `地址${item}`,
+          };
+        });
       }, 1000);
     },
     // 生成表格数据
